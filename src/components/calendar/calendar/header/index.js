@@ -130,7 +130,7 @@ class CalendarHeader extends Component {
                 style={this.style.dayHeader}
                 numberOfLines={1}
               >
-                {day}
+                {day[0]}
               </Text>
             ))}
           </View>
