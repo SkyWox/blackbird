@@ -1,15 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { Calendar, CalendarList } from './src/components/calendar'
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text> hi </Text>
+        <Text>Shake your phone to open the developer menu....</Text>
+        <CalendarList
+          current={Date()}
+          pastScrollRange={0}
+          futureScrollRange={2}
+          monthFormat={'MMMM'}
+          hideExtraDays={true}
+          theme={{
+            monthTextColor: 'red'
+          }}
+        />
       </View>
-    );
+    )
   }
 }
 
@@ -18,6 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
