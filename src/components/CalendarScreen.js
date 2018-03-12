@@ -11,12 +11,13 @@ export class CalendarScreen extends React.Component {
       <View style={styles.container}>
         <Text>Hi there</Text>
         <CalendarList
-          current={Date()}
+          minDate={Date()}
           pastScrollRange={0}
           futureScrollRange={2}
           monthFormat={'MMMM'}
           hideExtraDays={true}
           hidePreviousDays={true}
+          price={650}
           theme={{
             monthTextColor: 'red'
           }}
