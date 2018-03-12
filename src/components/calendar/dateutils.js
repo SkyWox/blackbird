@@ -37,12 +37,14 @@ function fromTo(a, b) {
   return days
 }
 
-function month(xd) {
+function month(xd, hidePreviousDays) {
   const year = xd.getFullYear(),
     month = xd.getMonth()
   const days = new Date(year, month + 1, 0).getDate()
 
-  const firstDay = new XDate(year, month, 1, 0, 0, 0, true)
+  const firstDay = hidePreviousDays
+    ? new XDate(year, month, xd.getDate(), 0, 0, 0, true)
+    : new XDate(year, month, 1, 0, 0, 0, true)
   const lastDay = new XDate(year, month, days, 0, 0, 0, true)
 
   return fromTo(firstDay, lastDay)
@@ -59,8 +61,8 @@ function weekDayNames(firstDayOfWeek = 0) {
   return weekDaysNames
 }
 
-function page(xd, firstDayOfWeek) {
-  const days = month(xd)
+function page(xd, firstDayOfWeek, hidePreviousDays) {
+  const days = month(xd, hidePreviousDays)
   let before = [],
     after = []
 
