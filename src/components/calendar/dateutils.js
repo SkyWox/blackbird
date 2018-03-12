@@ -42,9 +42,12 @@ function month(xd, hidePreviousDays) {
     month = xd.getMonth()
   const days = new Date(year, month + 1, 0).getDate()
 
-  const firstDay = hidePreviousDays
-    ? new XDate(year, month, xd.getDate(), 0, 0, 0, true)
-    : new XDate(year, month, 1, 0, 0, 0, true)
+  const today = new Date()
+  const firstDay =
+    hidePreviousDays && today.getMonth() == xd.getMonth()
+      ? new XDate(year, month, xd.getDate(), 0, 0, 0, true)
+      : new XDate(year, month, 1, 0, 0, 0, true)
+
   const lastDay = new XDate(year, month, days, 0, 0, 0, true)
 
   return fromTo(firstDay, lastDay)
