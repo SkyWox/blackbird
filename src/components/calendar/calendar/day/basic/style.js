@@ -27,7 +27,7 @@ export default function styleConstructor(theme = {}) {
       color: 'black'
     },
     noPrice: {
-      color: 'gray'
+      color: appStyle.textDisabledColor
     },
     alignedText: {
       marginTop: Platform.OS === 'android' ? 4 : 6
@@ -43,7 +43,7 @@ export default function styleConstructor(theme = {}) {
       color: appStyle.selectedDayTextColor
     },
     disabledText: {
-      color: appStyle.textDisabledColor
+      color: 'rgba(255, 255, 255, 0)'
     },
     dot: {
       width: 4,

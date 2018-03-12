@@ -62,6 +62,7 @@ export class Day extends Component {
   render() {
     const containerStyle = [this.style.base]
     const textStyle = [this.style.text]
+    const priceStyle = [this.style.price]
     const dotStyle = [this.style.dot]
 
     let marking = this.props.marking || {}
@@ -92,6 +93,7 @@ export class Day extends Component {
       textStyle.push(this.style.selectedText)
     } else if (isDisabled) {
       textStyle.push(this.style.disabledText)
+      priceStyle.push(this.style.disabledText)
     } else if (this.props.state === 'today') {
       textStyle.push(this.style.todayText)
     }
@@ -106,7 +108,7 @@ export class Day extends Component {
         <Text allowFontScaling={false} style={textStyle}>
           {String(this.props.children)}
         </Text>
-        <Price price={0} />
+        <Price style={priceStyle} price={this.props.price} />
         {dot}
       </TouchableOpacity>
     )
