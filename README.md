@@ -7,6 +7,7 @@
 * [What is it](#what-is-it)
 * [What has been added](#what-has-been-added)
 * [What needs to be added](#what-needs-to-be-added)
+* [How I made this](#how-i-made-this)
 
 ## What is it
 
@@ -18,8 +19,7 @@ It is adapted from the [react-native-calendars](https://github.com/wix/react-nat
 ![Expo QR Code](./QR_Code.png)  
 Scan to load in your Expo App
 
-![Resulting App](./Result.gif) ![Resulting App](./Result.gif)  
-Before and After
+![Resulting App](./Result.gif)
 
 ## What has been added
 
@@ -27,7 +27,7 @@ Before and After
   -- Data is loaded in at the top component level via the `priceData` JSON
 * Supression of past days and weeks via a new prop, `hidePreviousDays`
 * Contextual styling on days depending on flight availability
-
+* Navigation using `react-native-navigation`
 * Reformatting to match Blackbird's style  
   -- Day of the week rendered as a single letter  
   -- Date header with a horizontal span
@@ -37,14 +37,13 @@ Before and After
 * Sticky headers for scrolling  
   -- `react-native-calendars` renders the entire calendar with header as a FlatList item, so the header needs to be rendered separately to support this
 * Modal for booking flights
-
 * Resolve spacing issue for weeks with less than 7 rendered days  
   --This is not an issue with the supression I implemented, it is with days oustide the current month. May be due to changing the physical size of the days in the calendar.
-
 * Custom fonts  
   --Gilroy is loaded, but not used in `style.js`
 * Selecting date ranges  
   --Merge the fill attributes from the `Day/Period` component into `Day/Basic`
+* Clean code, remove unused dependencies
 
 ## How I made this
 
@@ -53,4 +52,4 @@ Prior to making this app I had no experience with React Native. This app was mad
 **Hours 0-2**: Setting up the Android development environment and scoping project  
 **Hours 2-4**: Learning the `react-native-calendar` library and making cosmetic changes to match the Blackbird app  
 **Hours 4-6**: Implementing functional features like rendering data from JSON and supression of past dates  
-**Hours 4-8**: Creating documentation
+**Hours 4-8**: Creating documentation, building APKs, uplading to Appetize, etc.
