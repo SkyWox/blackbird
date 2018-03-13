@@ -46,6 +46,7 @@ class CalendarListItem extends Component {
           disabledByDefault={this.props.disabledByDefault}
           showWeekNumbers={this.props.showWeekNumbers}
           hidePreviousDays={this.props.hidePreviousDays}
+          priceData={this.props.priceData}
         />
       )
     } else {

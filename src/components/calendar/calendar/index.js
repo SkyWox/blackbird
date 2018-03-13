@@ -158,16 +158,26 @@ class Calendar extends Component {
       availability: 'book',
       price: 375
     }
+
+    if (this.props.priceData[day.toString('MMMM')]) {
+      if (this.props.priceData[day.toString('MMMM')][day.toString('d')]) {
+        flightData = {
+          availability: this.props.priceData[day.toString('MMMM')][
+            day.toString('d')
+          ].availability,
+          price: this.props.priceData[day.toString('MMMM')][day.toString('d')]
+            .price
+        }
+      }
+    }
+
     //All Saturdays and Sundays are unavailable
     const weekends = [0, 6]
     if (weekends.indexOf(day.getDay()) > -1) {
       flightData = {
-        availability: 'none'
+        availability: 'none',
+        price: 0
       }
-    }
-
-    if (flightData.availability === 'none') {
-      flightData.price = 0
     }
 
     const minDate = parseDate(this.props.minDate)
@@ -309,6 +319,12 @@ class Calendar extends Component {
           weekNumbers={this.props.showWeekNumbers}
           onPressArrowLeft={this.props.onPressArrowLeft}
           onPressArrowRight={this.props.onPressArrowRight}
+        />
+        <View
+          style={{
+            borderBottomColor: 'gray',
+            borderBottomWidth: 0.5
+          }}
         />
         {weeks}
       </View>

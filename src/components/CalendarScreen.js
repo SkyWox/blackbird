@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Calendar, CalendarList } from './calendar'
+import priceData from '../../priceData.js'
 
 export class CalendarScreen extends React.Component {
   static navigationOptions = {
@@ -16,6 +17,7 @@ export class CalendarScreen extends React.Component {
           monthFormat={'MMMM'}
           hideExtraDays={true}
           hidePreviousDays={true}
+          priceData={priceData}
           theme={{
             monthTextColor: 'red'
           }}
