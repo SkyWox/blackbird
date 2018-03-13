@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [What is it](#what-is-it)
-* [What has been added](#available-scripts)
-* [What needs to be added](#available-scripts)
+* [What has been added](#what-has-been)
+* [What needs to be added](#what-needs)
 
 ## What is it
 
