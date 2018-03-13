@@ -8,7 +8,7 @@ export default function styleConstructor(theme = {}) {
   return StyleSheet.create({
     base: {
       width: 64,
-      height: 64,
+      height: 40,
       alignItems: 'center'
     },
     text: {
@@ -20,15 +20,13 @@ export default function styleConstructor(theme = {}) {
       backgroundColor: 'rgba(255, 255, 255, 0)'
     },
     price: {
-      marginTop: 4,
+      marginTop: 3,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
       fontWeight: '300',
       color: 'black'
     },
-    noFlights: {
-      color: appStyle.textDisabledColor
-    },
+
     alignedText: {
       marginTop: Platform.OS === 'android' ? 4 : 6
     },
@@ -50,6 +48,9 @@ export default function styleConstructor(theme = {}) {
     },
     waitlist: {
       color: 'orange'
+    },
+    unavailable: {
+      color: appStyle.textDisabledColor
     },
     dot: {
       width: 4,

@@ -95,8 +95,8 @@ export class Day extends Component {
       textStyle.push(this.style.disabledText)
       priceStyle.push(this.style.disabledText)
     } else if (this.props.flightData.availability === 'none') {
-      textStyle.push(this.style.noFlights)
-      priceStyle.push(this.style.noFlights)
+      textStyle.push(this.style.unavailable)
+      priceStyle.push(this.style.unavailable)
     } else if (this.props.flightData.availability === 'book') {
       textStyle.push(this.style.bookable)
     } else if (this.props.flightData.availability === 'waitlist') {

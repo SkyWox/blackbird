@@ -9,7 +9,6 @@ export class CalendarScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hi there</Text>
         <CalendarList
           minDate={Date()}
           pastScrollRange={0}
