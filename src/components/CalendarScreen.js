@@ -1,11 +1,20 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { Font } from 'expo'
 import { Calendar, CalendarList } from './calendar'
 import priceData from '../../priceData.js'
 
 export class CalendarScreen extends React.Component {
   static navigationOptions = {
     title: 'Select a departure date'
+  }
+  componentDidMount() {
+    Font.loadAsync({
+      'gilroy-extrabold': require('../../fonts/gilroy-extrabold.otf')
+    })
+    Font.loadAsync({
+      'gilroy-light': require('../../fonts/gilroy-light.otf')
+    })
   }
   render() {
     return (
