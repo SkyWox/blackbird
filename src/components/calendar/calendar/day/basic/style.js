@@ -26,7 +26,7 @@ export default function styleConstructor(theme = {}) {
       fontWeight: '300',
       color: 'black'
     },
-    noPrice: {
+    noFlights: {
       color: appStyle.textDisabledColor
     },
     alignedText: {
@@ -44,6 +44,12 @@ export default function styleConstructor(theme = {}) {
     },
     disabledText: {
       color: 'rgba(255, 255, 255, 0)'
+    },
+    bookable: {
+      color: 'green'
+    },
+    waitlist: {
+      color: 'orange'
     },
     dot: {
       width: 4,

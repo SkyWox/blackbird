@@ -154,6 +154,22 @@ class Calendar extends Component {
   }
 
   renderDay(day, id) {
+    flightData = {
+      availability: 'book',
+      price: 375
+    }
+    //All Saturdays and Sundays are unavailable
+    const weekends = [0, 6]
+    if (weekends.indexOf(day.getDay()) > -1) {
+      flightData = {
+        availability: 'none'
+      }
+    }
+
+    if (flightData.availability === 'none') {
+      flightData.price = 0
+    }
+
     const minDate = parseDate(this.props.minDate)
     const maxDate = parseDate(this.props.maxDate)
     let state = ''
@@ -190,7 +206,7 @@ class Calendar extends Component {
           onPress={this.pressDay}
           date={xdateToData(day)}
           marking={this.getDateMarking(day)}
-          price={this.props.price}
+          flightData={flightData}
         >
           {date}
         </DayComp>

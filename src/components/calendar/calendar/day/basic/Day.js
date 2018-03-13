@@ -94,8 +94,13 @@ export class Day extends Component {
     } else if (isDisabled) {
       textStyle.push(this.style.disabledText)
       priceStyle.push(this.style.disabledText)
-    } else if (this.props.state === 'today') {
-      textStyle.push(this.style.todayText)
+    } else if (this.props.flightData.availability === 'none') {
+      textStyle.push(this.style.noFlights)
+      priceStyle.push(this.style.noFlights)
+    } else if (this.props.flightData.availability === 'book') {
+      textStyle.push(this.style.bookable)
+    } else if (this.props.flightData.availability === 'waitlist') {
+      textStyle.push(this.style.waitlist)
     }
 
     return (
@@ -108,7 +113,7 @@ export class Day extends Component {
         <Text allowFontScaling={false} style={textStyle}>
           {String(this.props.children)}
         </Text>
-        <Price style={priceStyle} price={this.props.price} />
+        <Price style={priceStyle} price={this.props.flightData.price} />
         {dot}
       </TouchableOpacity>
     )
