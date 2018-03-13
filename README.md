@@ -15,8 +15,6 @@ It is adapted from the [react-native-calendars](https://github.com/wix/react-nat
 
 **[Try it on Appetize](https://appetize.io/app/njv1hdhvutwb97ftcpp0dcymtw?device=nexus5&scale=75&orientation=portrait&osVersion=7.1)**
 
-<iframe src="https://appetize.io/embed/njv1hdhvutwb97ftcpp0dcymtw privateKey: private_q4rd2hy6kpvfc5n1276fh88uyc?device=iphone5s&scale=100&autoplay=true&orientation=portrait&deviceColor=black" width="378px" height="800px" frameborder="0" scrolling="no"></iframe>
-
 ![Expo QR Code](./QR_Code.png)  
 Scan to load in your Expo App
 
@@ -25,7 +23,7 @@ Before and After
 
 ## What has been added
 
-* New subcomponent `Price` under `Day` to hold pricing data
+* New subcomponent `Price` under `Day` to hold pricing data  
   -- Data is loaded in at the top component level via the `priceData` JSON
 * Supression of past days and weeks via a new prop, `hidePreviousDays`
 * Contextual styling on days depending on flight availability
@@ -40,10 +38,13 @@ Before and After
   -- `react-native-calendars` renders the entire calendar with header as a FlatList item, so the header needs to be rendered separately to support this
 * Modal for booking flights
 
-* Resolve spacing issue for weeks with less than 7 rendered days
+* Resolve spacing issue for weeks with less than 7 rendered days  
+  --This is not an issue with the supression I implemented, it is with days oustide the current month. May be due to changing the physical size of the days in the calendar.
 
-* Custom fonts
-* Selecting date ranges
+* Custom fonts  
+  --Gilroy is loaded, but not used in `style.js`
+* Selecting date ranges  
+  --Merge the fill attributes from the `Day/Period` component into `Day/Basic`
 
 ## How I made this
 
