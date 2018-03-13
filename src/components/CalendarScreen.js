@@ -16,7 +16,6 @@ export class CalendarScreen extends React.Component {
           monthFormat={'MMMM'}
           hideExtraDays={true}
           hidePreviousDays={true}
-          price={650}
           theme={{
             monthTextColor: 'red'
           }}
